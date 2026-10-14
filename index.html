@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Detective | GitHub Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">⌕ Dev<span>Detective</span></a>
+
+    <nav>
+      <a href="#search">Explore</a>
+      <a href="#battle">Battle Mode</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+      ☀️
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="search">
+      <p class="eyebrow">THE DEVELOPER INTELLIGENCE TOOL</p>
+      <h1>Every developer has a story.<br />
+        <span>Let's find yours.</span>
+      </h1>
+      <p class="subtitle">
+        Explore GitHub profiles, discover repositories, and compare developers.
+      </p>
+
+      <form id="searchForm" class="search-box">
+        <span class="search-icon">⌕</span>
+        <input
+          id="usernameInput"
+          type="text"
+          placeholder="Enter GitHub username..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search Profile ↗</button>
+      </form>
+
+      <p class="hint">Try a profile: octocat, torvalds, gaearon</p>
+    </section>
+
+    <section id="status" class="status hidden" aria-live="polite"></section>
+
+    <section id="profileSection" class="profile-section hidden">
+      <div id="profileCard"></div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CODE ARCHIVE</p>
+          <h2>Latest repositories</h2>
+        </div>
+        <span id="repoCount" class="count"></span>
+      </div>
+
+      <div id="repoGrid" class="repo-grid"></div>
+    </section>
+
+    <section id="battle" class="battle-section">
+      <p class="eyebrow">THE ULTIMATE SHOWDOWN</p>
+      <h2>Developer <span>Battle Mode</span></h2>
+      <p class="subtitle">
+        Compare two developers by their public GitHub statistics and total stars.
+      </p>
+
+      <form id="battleForm" class="battle-form">
+        <input id="playerOne" placeholder="First username" required />
+        <span class="versus">VS</span>
+        <input id="playerTwo" placeholder="Second username" required />
+        <button type="submit">Start Battle ⚔</button>
+      </form>
+
+      <div id="battleStatus" class="status hidden" aria-live="polite"></div>
+      <div id="battleResults" class="battle-results"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dev Detective · Built with HTML, CSS & Vanilla JavaScript</p>
+    <p>Powered by the GitHub REST API</p>
+  </footer>
+</body>
+</html>
